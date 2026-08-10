@@ -1,0 +1,501 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRCA Website Rebuild — Concept Mockup</title>
+<style>
+:root{
+  /* DRCA brand: PMS 540C #0A3254, PMS 5435C #A5BAC9, Futura */
+  --ink:#0A3254; --paper:#F7F9FB; --panel:#FFFFFF; --accent:#A5BAC9; --accent-ink:#44658A;
+  --line:#D9E1E9; --muted:#5D6B7A; --ribbon:#DFA32B; --ribbon-ink:#3A2E10;
+  --brand-navy:#0A3254; --brand-steel:#A5BAC9;
+  --disp:"Futura","Avenir Next","Century Gothic","Trebuchet MS",sans-serif;
+  --body:"Charter","Iowan Old Style",Georgia,serif;
+  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --ink:#E4EBF2; --paper:#0D1B2A; --panel:#152638; --accent:#A5BAC9; --accent-ink:#A9C4DC;
+  --line:#28405A; --muted:#8FA3B8; --ribbon:#8A6A1D; --ribbon-ink:#F4E8C8;
+}}
+:root[data-theme="dark"]{
+  --ink:#E4EBF2; --paper:#0D1B2A; --panel:#152638; --accent:#A5BAC9; --accent-ink:#A9C4DC;
+  --line:#28405A; --muted:#8FA3B8; --ribbon:#8A6A1D; --ribbon-ink:#F4E8C8;
+}
+:root[data-theme="light"]{
+  --ink:#0A3254; --paper:#F7F9FB; --panel:#FFFFFF; --accent:#A5BAC9; --accent-ink:#44658A;
+  --line:#D9E1E9; --muted:#5D6B7A; --ribbon:#DFA32B; --ribbon-ink:#3A2E10;
+}
+/* Teal-accent variant: brand navy identity + teal working accent (board comparison) */
+:root[data-palette="teal"]{
+  --accent:#2E7D6E; --accent-ink:#245F54; --paper:#FAF7F0; --line:#DFD8C8; --muted:#6B7280;
+  --illus-bg:#2E7D6E; --illus-ground:#245F54; --illus-flower:#DFA32B;
+}
+:root[data-palette="teal"] .btn{background:#2E7D6E;color:#fff}
+:root[data-palette="teal"] .btn.ghost{background:transparent;color:#245F54;border-color:#2E7D6E}
+:root[data-palette="teal"] nav a.join,
+:root[data-palette="teal"] .feature .btn,
+:root[data-palette="teal"] .joinstrip .btn{background:#2E7D6E;color:#fff}
+:root[data-palette="teal"] .feature .btn.ghost{background:transparent;color:#F2F6FA;border-color:#9ED0C4}
+:root[data-palette="teal"] .feature .eyebrow{color:#9ED0C4}
+.palpick{margin-left:.6rem;white-space:nowrap}
+.palpick a{cursor:pointer;text-decoration:underline;color:inherit;font-weight:400;padding:0 .15rem}
+.palpick a.picked{font-weight:700;text-decoration:none;outline:1px solid currentColor;border-radius:2px;padding:0 .3rem}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6}
+a{color:var(--accent-ink)}
+.ribbon{background:var(--ribbon);color:var(--ribbon-ink);font-family:var(--ui);font-size:.78rem;
+  text-align:center;padding:.45rem .75rem;letter-spacing:.02em}
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:2px solid var(--ink)}
+.hwrap{max-width:960px;margin:0 auto;padding:.7rem 1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.mark{font-family:var(--disp);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:1rem;line-height:1.2}
+.mark small{display:block;font-weight:400;letter-spacing:.22em;font-size:.58rem;color:var(--accent-ink)}
+nav{display:flex;gap:.15rem;flex-wrap:wrap;margin-left:auto;font-family:var(--disp)}
+nav a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);
+  padding:.45rem .6rem;border-radius:2px;cursor:pointer}
+nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+nav a.join{background:var(--brand-steel);color:var(--brand-navy);margin-left:.35rem}
+nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{max-width:960px;margin:0 auto;padding:1.25rem 1rem 3rem}
+section[data-page]{display:none}
+section[data-page].on{display:block}
+.eyebrow{font-family:var(--disp);text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;color:var(--accent-ink);margin:0 0 .4rem}
+h1{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.5rem,4vw,2.2rem);
+  line-height:1.15;margin:.1rem 0 .75rem;text-wrap:balance}
+h2{font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;margin:2rem 0 .75rem;
+  padding-bottom:.35rem;border-bottom:1px solid var(--line)}
+.lede{font-size:1.06rem;max-width:62ch}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem;align-items:start;padding:1.5rem 0 .5rem}
+@media(max-width:700px){.hero{grid-template-columns:1fr}}
+.feature{display:grid;grid-template-columns:minmax(240px,.9fr) 1.1fr;gap:0;margin:1.25rem 0 .35rem;
+  background:var(--brand-navy);color:#F2F6FA;border-radius:6px;overflow:hidden}
+@media(max-width:700px){.feature{grid-template-columns:1fr}}
+.feature .fimg{min-height:220px;display:flex}
+.feature .fimg svg{width:100%;height:100%;display:block}
+.feature .ftxt{padding:1.4rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;justify-content:center}
+.feature .eyebrow{color:var(--brand-steel);opacity:.95;margin:0}
+.feature h1{margin:0;font-size:clamp(1.3rem,3.2vw,1.9rem)}
+.feature .when{font-family:var(--ui);font-size:.85rem;opacity:.85;margin:0}
+.feature p.blurb{margin:0;font-size:.95rem;max-width:52ch;opacity:.95}
+.feature .row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.35rem}
+.feature .btn.ghost{background:transparent;color:#F2F6FA;border-color:var(--brand-steel);opacity:.95}
+.fnote{font-family:var(--ui);font-size:.75rem;color:var(--muted);margin:.4rem 0 0}
+.fnote a{cursor:pointer}
+.introstrip{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  padding:1.1rem 0 .4rem}
+.introstrip p{margin:0;max-width:62ch;font-size:1.02rem}
+.upgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
+@media(max-width:700px){.upgrid{grid-template-columns:1fr}}
+.calembed{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:1rem;
+  font-family:var(--ui);font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:.5rem;min-height:230px}
+.calembed .fake{flex:1;border:1px dashed var(--accent);border-radius:4px;display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:1rem;color:var(--accent-ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1rem 1.1rem}
+.card.next{border-top:4px solid var(--accent)}
+.card.next .when{font-family:var(--ui);font-size:.8rem;color:var(--muted);margin:.15rem 0 .5rem}
+.btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;
+  background:var(--ink);color:var(--paper);text-decoration:none;padding:.6rem .95rem;border-radius:2px}
+.btn.ghost{background:transparent;color:var(--accent-ink);border:1px solid var(--accent-ink)}
+.feature .btn,.joinstrip .btn{background:var(--brand-steel);color:var(--brand-navy)}
+ul.events{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+ul.events li{display:grid;grid-template-columns:3.4rem 1fr;gap:.8rem;align-items:start;
+  background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.7rem .8rem}
+.date{font-family:var(--disp);text-align:center;border-right:1px solid var(--line);padding-right:.7rem}
+.date b{display:block;font-size:1.25rem;line-height:1.1}
+.date span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+ul.events .what b{font-family:var(--ui);font-size:.92rem}
+ul.events .what p{margin:.15rem 0 0;font-size:.86rem;color:var(--muted);font-family:var(--ui)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:700px){.cols{grid-template-columns:1fr}}
+.minlist{list-style:none;padding:0;margin:0}
+.minlist li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.minlist .d{font-family:var(--ui);font-size:.75rem;letter-spacing:.06em;color:var(--accent-ink);text-transform:uppercase}
+.minlist p{margin:.25rem 0 .4rem;font-size:.92rem;max-width:70ch}
+.pdf{font-family:var(--ui);font-size:.8rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.85rem 0 .25rem}
+.chip{font-family:var(--ui);font-size:.75rem;padding:.32rem .75rem;border:1px solid var(--line);
+  border-radius:999px;cursor:pointer;color:var(--ink);text-decoration:none;background:var(--panel)}
+.chip.picked{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.grid .card h3{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;margin:0 0 .5rem}
+.grid .card p{font-size:.88rem;margin:.25rem 0}
+.grid .card .em{font-family:var(--ui);font-size:.78rem;color:var(--muted);word-break:break-all}
+.board{list-style:none;padding:0;margin:0;columns:2;column-gap:2rem;font-size:.95rem}
+@media(max-width:600px){.board{columns:1}}
+.board li{padding:.35rem 0;border-bottom:1px dotted var(--line);break-inside:avoid}
+.board b{font-family:var(--ui);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;display:block;color:var(--muted)}
+.joinstrip{margin-top:2.5rem;background:var(--brand-navy);color:#F2F6FA;border-radius:4px;padding:1.4rem 1.5rem;
+  display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.joinstrip p{margin:0;font-size:1rem;max-width:48ch}
+.calbox{border:1px dashed var(--accent);border-radius:4px;padding:1.2rem;text-align:center;
+  font-family:var(--ui);font-size:.85rem;color:var(--muted)}
+footer{border-top:2px solid var(--ink);margin-top:2rem}
+.fwrap{max-width:960px;margin:0 auto;padding:1.2rem 1rem;font-family:var(--ui);font-size:.78rem;color:var(--muted);
+  display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap}
+@media (prefers-reduced-motion: no-preference){
+  section[data-page].on{animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+</style>
+
+<div class="ribbon">Concept mockup for the DRCA board — built from the real content of delraycitizens.org.
+Navigation works; outbound links are live, PDF links are placeholders.
+<span class="palpick">Color scheme — you choose:
+<a id="pal-brand" class="picked">Brand blues</a> · <a id="pal-teal">Teal accent</a></span></div>
+
+<header>
+  <div class="hwrap">
+    <img src="data:image/png;base64,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" alt="DRCA logo" width="48" height="48" style="flex:none">
+    <div class="mark">Del Ray Citizens<br>Association <small>Bringing Neighbors Together · Est. 1954</small></div>
+    <nav aria-label="Site">
+      <a data-nav="home" aria-current="page">Home</a>
+      <a data-nav="events">Events</a>
+      <a data-nav="news">News</a>
+      <a data-nav="committees">Committees</a>
+      <a data-nav="about">About</a>
+      <a class="join" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Join / Renew</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section data-page="home" class="on">
+  <div class="feature" id="featured">
+    <div class="fimg" aria-hidden="true">
+      <svg viewBox="0 0 420 260" preserveAspectRatio="xMidYMid slice" role="img">
+        <rect width="420" height="260" fill="var(--illus-bg,#A5BAC9)"/>
+        <circle cx="352" cy="52" r="26" fill="#FFFFFF" opacity=".9"/>
+        <rect x="0" y="190" width="420" height="70" fill="var(--illus-ground,#0A3254)"/>
+        <!-- bungalow row -->
+        <g fill="#FFFFFF">
+          <rect x="28" y="128" width="86" height="66"/>
+          <polygon points="22,128 71,92 120,128"/>
+          <rect x="58" y="156" width="24" height="38" fill="var(--illus-ground,#0A3254)"/>
+          <rect x="150" y="118" width="96" height="76"/>
+          <polygon points="142,118 198,78 254,118"/>
+          <rect x="184" y="150" width="26" height="44" fill="var(--illus-ground,#0A3254)"/>
+          <rect x="282" y="132" width="82" height="62"/>
+          <polygon points="276,132 323,98 370,132"/>
+          <rect x="310" y="158" width="22" height="36" fill="var(--illus-ground,#0A3254)"/>
+        </g>
+        <!-- garden -->
+        <g>
+          <circle cx="60" cy="212" r="10" fill="var(--illus-flower,#A5BAC9)"/>
+          <circle cx="130" cy="220" r="7" fill="#FFFFFF"/>
+          <circle cx="230" cy="214" r="9" fill="var(--illus-flower,#A5BAC9)"/>
+          <circle cx="330" cy="222" r="7" fill="#FFFFFF"/>
+          <circle cx="390" cy="212" r="9" fill="var(--illus-flower,#A5BAC9)"/>
+        </g>
+        <text x="210" y="245" text-anchor="middle" font-family="Futura, Avenir Next, sans-serif"
+          font-size="11" letter-spacing="3" fill="#FFFFFF" opacity=".85">EVENT PHOTO GOES HERE</text>
+      </svg>
+    </div>
+    <div class="ftxt">
+      <p class="eyebrow">Featured · Tickets on sale</p>
+      <h1>Biennial House &amp; Garden Tour</h1>
+      <p class="when">September 2026 · homes &amp; gardens across Del Ray</p>
+      <p class="blurb">Step inside Del Ray's most interesting homes and gardens. Proceeds fund DRCA
+      neighborhood projects. Tickets via Eventbrite.</p>
+      <div class="row">
+        <a class="btn" href="https://delraycitizens.org/house-and-garden-tour/" target="_blank" rel="noopener">Get tickets</a>
+        <a class="btn ghost" data-nav="events">All events</a>
+      </div>
+    </div>
+  </div>
+  <p class="fnote">Mockup note: this band is the replacement for today's homepage slider — one featured
+  thing, with an image and a link (event page or registration). When nothing's featured,
+  <a id="ftoggle">the band simply disappears — click to preview</a>.</p>
+
+  <div class="introstrip">
+    <p><strong style="font-family:var(--disp);letter-spacing:.04em">NEIGHBORS, INFORMED.</strong> —
+    The Del Ray Citizens Association has connected the people of Del Ray since 1954: land use, safety,
+    schools, parks, and the neighborhood's voice at City Hall.</p>
+    <span><a class="btn" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Become a member</a>
+    <a class="btn ghost" data-nav="about" style="margin-left:.4rem">What we do</a></span>
+  </div>
+
+  <h2>Coming up</h2>
+  <ul class="events">
+    <li><div class="date"><b>2</b><span>Sep</span></div>
+      <div class="what"><b>Parks Committee Meeting</b><p>7:30–8:30 pm · Zoom · parks@delraycitizen.net</p></div></li>
+    <li style="border-left:4px solid var(--accent)"><div class="date"><b>9</b><span>Sep</span></div>
+      <div class="what"><b>Membership Meeting</b><p>7:00 pm · Zoom · budget vote for 2026–27 ·
+      details in the member newsletter</p></div></li>
+    <li><div class="date"><b>29</b><span>Sep</span></div>
+      <div class="what"><b>Land Use Committee</b><p>7:30 pm · Zoom · landuse@delraycitizen.net</p></div></li>
+  </ul>
+  <p class="fnote">These listings are rendered <em>from the DRCA Google Calendar feed</em> — the exact
+  same calendar the board updates today, restyled. Nothing is typed twice, and this list can never
+  drift out of date. <a>Open the full month view →</a> (a page with the familiar embed, for browsing ahead).</p>
+
+  <div class="cols" style="margin-top:2rem">
+    <div>
+      <h2 style="margin-top:0">Latest minutes</h2>
+      <ul class="minlist">
+        <li><span class="d">March 11, 2026</span>
+          <p>City Council special-election candidate forum, stormwater presentation from the City, and a
+          membership vote on the zoning text amendment.</p><span class="pdf">📄 Minutes (PDF)</span></li>
+        <li><span class="d">February 11, 2026</span>
+          <p>Candidate forum and membership discussion of the Traffic Calming Committee's Braddock Road
+          recommendations.</p><span class="pdf">📄 Minutes (PDF)</span></li>
+      </ul>
+      <p><a data-nav="minutes" style="font-family:var(--ui);font-size:.85rem;cursor:pointer">Full minutes archive →</a></p>
+    </div>
+    <div>
+      <h2 style="margin-top:0">News</h2>
+      <ul class="minlist">
+        <li><span class="d">August 4, 2026</span>
+          <p>National Night Out: thanks to every block that turned out — Del Ray showed up.</p></li>
+        <li><span class="d">May 2026</span>
+          <p>Biennial House &amp; Garden Tour tickets are on sale now — proceeds fund neighborhood projects.</p></li>
+      </ul>
+      <p><a data-nav="news" style="font-family:var(--ui);font-size:.85rem;cursor:pointer">All news →</a></p>
+    </div>
+  </div>
+
+  <div class="joinstrip">
+    <p><strong>Dues do work here.</strong> Membership supports the Halloween parade, Art on the Avenue,
+    the Turkey Trot, neighborhood parks, and local nonprofits.</p>
+    <a class="btn" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Join / Renew</a>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section data-page="about">
+  <p class="eyebrow">About the DRCA</p>
+  <h1>A civic association, since 1954.</h1>
+  <p class="lede">The Del Ray Citizens Association (DRCA) is a non-profit 501(c)(4) organization for Del Ray
+  residents and business owners in Alexandria, Virginia. We keep members informed on land use, public
+  safety, schools, parks and recreation, transportation, housing, and the other issues that shape
+  quality of life — and we represent the neighborhood before the Planning Commission, Board of Zoning
+  Appeals, and City Council.</p>
+  <p>The DRCA meets at <strong>7:00 pm on the second Wednesday of the month, September through June</strong>,
+  typically via Zoom. Meeting details are shared in the member newsletter.</p>
+
+  <h2>Why join?</h2>
+  <div class="grid">
+    <div class="card"><h3>Stay informed</h3><p>Monthly meetings and newsletters cover land use, safety,
+      transportation, volunteering, and events before they hit your feed.</p></div>
+    <div class="card"><h3>Advocate</h3><p>The DRCA carries member positions into city forums — one letter
+    from a thousand households lands differently than one from one.</p></div>
+    <div class="card"><h3>Vote</h3><p>Members debate and decide DRCA positions — from restaurant patio
+    expansions to zoning changes next to your alley.</p></div>
+    <div class="card"><h3>Community</h3><p>The feel of Del Ray doesn't maintain itself. Dues fund the
+    events that bring neighbors together.</p></div>
+  </div>
+
+  <h2>2026–2027 Executive Board</h2>
+  <ul class="board">
+    <li><b>President</b>Caitlin Leach</li>
+    <li><b>Vice President</b>Ashton Davis</li>
+    <li><b>Membership Director</b>Elizabeth Reyna</li>
+    <li><b>Activities Director</b>Rachel Lazarus</li>
+    <li><b>Treasurer</b>Lisa Quandt</li>
+    <li><b>Secretary</b>Megan Cowman</li>
+    <li><b>Chief Information Officer</b>Elena Hutchison</li>
+    <li><b>Past President</b>Tim Laderach</li>
+  </ul>
+  <p style="font-family:var(--ui);font-size:.85rem;color:var(--muted)">Bylaws, elections, and funding
+  request form live here too — one page each, linked from this section.</p>
+</section>
+
+<!-- ============ COMMITTEES ============ -->
+<section data-page="committees">
+  <p class="eyebrow">Get involved</p>
+  <h1>Committees</h1>
+  <p class="lede">Committees are where the DRCA's actual work happens — and every one of them wants
+  more neighbors at the table.</p>
+  <div class="grid" style="margin-top:1.25rem">
+    <div class="card"><h3>Land Use</h3>
+      <p>Reviews every zoning change, SUP, and development proposal that touches Del Ray, meets with
+      applicants and neighbors, and shapes the Association's recommendations to the city.</p>
+      <p>Last Tuesday · 7:30 pm · Zoom</p><p class="em">landuse@delraycitizen.net</p></div>
+    <div class="card"><h3>Traffic Calming</h3>
+      <p>Works to make Del Ray safer to walk and ride — re-formed in 2023 after members named pedestrian
+      safety a top concern. Represents members on city traffic and parking requests.</p>
+      <p>Third Wednesday · Zoom</p><p class="em">tcc_chair@delraycitizens.org</p></div>
+    <div class="card"><h3>Parks / Adopt-a-Park</h3>
+      <p>Keeps neighborhood parks litter-free through the city's Adopt-a-Park program — and the city
+      pays the DRCA for it, funding reinvestment in the parks.</p>
+      <p>First Wednesday · 7:30 pm · Zoom</p><p class="em">parks@delraycitizen.net</p></div>
+    <div class="card"><h3>Historical</h3>
+      <p>Administers the Town of Potomac Historic District plaque program and connects the DRCA with
+      Alexandria's historical organizations.</p><p class="em">Via the contact form</p></div>
+    <div class="card"><h3>Membership</h3>
+      <p>Grows the association — brochures, real-estate agent outreach, and membership drives at
+      neighborhood events.</p><p class="em">membership@delraycitizen.net</p></div>
+    <div class="card"><h3>Start one?</h3>
+      <p>Committees form where members see a need — Traffic Calming started exactly that way. Bring an
+      idea to a membership meeting.</p></div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section data-page="events">
+  <p class="eyebrow">DRCA traditions</p>
+  <h1>Events</h1>
+  <p class="lede">Every DRCA event gets its own page — details, photos, and a registration or tickets
+  link when there is one. No more satellite sites; it all lives here.</p>
+  <div class="grid" style="margin-top:1.25rem">
+    <div class="card"><h3>House &amp; Garden Tour</h3>
+      <p>Every other year on Mother's Day weekend since 1999 — DRCA's largest fundraiser.</p>
+      <p class="em">Biennial · May · next: 2028</p>
+      <p><a class="btn ghost" data-nav="event-hgt">Event page →</a></p></div>
+    <div class="card"><h3>National Night Out</h3>
+      <p>Del Ray's police-and-neighbors block party at Pat Miller Square — with this year's
+      Community Dog Walk with the Chief.</p>
+      <p class="em">Annual · first Tuesday of August · 5–7 pm</p>
+      <p><a class="btn ghost">Event page →</a></p></div>
+    <div class="card"><h3>GardenFest</h3>
+      <p>Garden day at Colasanto Park — plants, neighbors, spring on the Avenue.</p>
+      <p class="em">Annual · April · Colasanto Park</p>
+      <p><a class="btn ghost">Event page →</a></p></div>
+    <div class="card"><h3>Chili Cook Off</h3>
+      <p>Neighborhood cooks compete; neighborhood eats. Entry rules on the event page.</p>
+      <p class="em">Annual · fall</p>
+      <p><a class="btn ghost">Event page →</a></p></div>
+    <div class="card"><h3>Halloween</h3>
+      <p>Del Ray's biggest night — the parade and the porches.</p>
+      <p class="em">Annual · October 31</p>
+      <p><a class="btn ghost">Event page →</a></p></div>
+    <div class="card"><h3>Membership Meetings</h3>
+      <p>Second Wednesday monthly, September–June, 7 pm on Zoom. Where the association does its business.</p>
+      <p class="em">Monthly · details in the newsletter</p>
+      <p><a class="btn ghost" data-nav="news" data-filter="minutes">Past minutes →</a></p></div>
+  </div>
+  <p class="fnote" style="margin-top:1rem">Only the House &amp; Garden Tour page is built out in this
+  mockup — the others follow the same template.</p>
+</section>
+
+<!-- ============ EVENT DETAIL: HOUSE & GARDEN TOUR ============ -->
+<section data-page="event-hgt">
+  <p class="eyebrow"><a data-nav="events" style="cursor:pointer">Events</a> · Biennial · Next: May 2028</p>
+  <h1>The Del Ray House &amp; Garden Tour</h1>
+  <p class="lede">A self-guided walking tour of Del Ray's most interesting homes, ADUs, and gardens —
+  held every other year on the Saturday of Mother's Day weekend since 1999.</p>
+  <div class="cols" style="margin-top:1.25rem">
+    <div>
+      <h2 style="margin-top:0">About the tour</h2>
+      <p>The Tour is DRCA's largest fundraiser, and proceeds from ticket sales stay in our community.
+      The 2026 tour featured twelve homes and gardens and supported the Scholarship Fund of Alexandria,
+      after-school tutoring at Mount Vernon Community School, and restoration of the Del Ray Little
+      Red Caboose.</p>
+      <p>Previous tours have supported scholarships for local students, the Duncan Library, the Nancy
+      Dunning Memorial Garden, the Del Ray Gateway Project, the Mt. Vernon School playground, and
+      neighborhood parks.</p>
+      <h2>Get involved</h2>
+      <p>Interested in being a volunteer docent? The committee would love to hear from you:
+      <a href="mailto:hgtour@delraycitizens.org">hgtour@delraycitizens.org</a></p>
+    </div>
+    <div>
+      <div class="card next">
+        <p class="eyebrow">At a glance</p>
+        <p style="font-family:var(--ui);font-size:.9rem;margin:.3rem 0">📅 Saturday of Mother's Day
+        weekend, even-ish years — next in <strong>May 2028</strong><br>🚶 Self-guided walking tour<br>
+        🎟️ Tickets via Eventbrite when on sale<br>💰 Proceeds stay in Del Ray</p>
+        <a class="btn" style="margin-top:.4rem">Get tickets (when on sale)</a>
+      </div>
+      <p class="fnote">Event photo gallery goes here — pulled from the 2026 tour.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS: MEETING-MINUTES FILTER VIEW ============ -->
+<section data-page="minutes">
+  <p class="eyebrow">Around the neighborhood</p>
+  <h1>News</h1>
+  <div class="chips">
+    <a class="chip" data-nav="news">All</a>
+    <a class="chip picked">Meeting minutes</a>
+    <a class="chip" data-nav="news">Land use</a>
+    <a class="chip" data-nav="news">Events</a>
+  </div>
+  <p class="fnote">Minutes are just news posts in a category — one archive, filtered. And in the
+  rebuilt site, the Secretary drops a PDF into a Drive folder and this list updates itself.</p>
+  <h2>2026</h2>
+  <ul class="minlist">
+    <li><span class="d">March 11, 2026</span>
+      <p>City Council Special Primary Election candidate forum. Stormwater presentation from the City.
+      Zoning text amendment presentation and membership vote.</p><span class="pdf">📄 DRCA 3.11.26 Minutes (PDF)</span></li>
+    <li><span class="d">February 11, 2026</span>
+      <p>Candidate forum; membership discussion on Traffic Calming Committee recommendations to the City
+      on the Braddock Road proposal.</p><span class="pdf">📄 DRCA 2.11.26 Minutes (PDF)</span></li>
+    <li><span class="d">January 14, 2026</span>
+      <p>Presentations from the MVCS Principal, the Domestic Violence and Sexual Assault Program, and
+      EcoCity Alexandria. Committee updates.</p><span class="pdf">📄 DRCA 1.14.26 Minutes (PDF)</span></li>
+  </ul>
+  <h2>2025</h2>
+  <ul class="minlist">
+    <li><span class="d">November 12, 2025</span>
+      <p>City T&amp;ES presentation on the Braddock Road project; Parks Committee funding request for
+      watering new trees along Commonwealth Avenue.</p><span class="pdf">📄 11 12 25 Minutes (PDF)</span></li>
+    <li><span class="d">October 8, 2025</span>
+      <p>Committee updates.</p><span class="pdf">📄 10 8 25 Minutes (PDF)</span></li>
+    <li><span class="d">September 10, 2025</span>
+      <p>Cub Pack 135 chartering request; Volunteer Alexandria presentation; Treasurer presented the
+      2025–26 budget and membership voted.</p><span class="pdf">📄 9 10 25 Minutes (PDF)</span></li>
+  </ul>
+  <p style="font-family:var(--ui);font-size:.85rem;color:var(--muted)">…and 81 more, back to 2013,
+  all migrated from the current site.</p>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section data-page="news">
+  <p class="eyebrow">Around the neighborhood</p>
+  <h1>News</h1>
+  <div class="chips">
+    <a class="chip picked">All</a>
+    <a class="chip" data-nav="minutes">Meeting minutes</a>
+    <a class="chip">Land use</a>
+    <a class="chip">Events</a>
+  </div>
+  <ul class="minlist" style="margin-top:1rem">
+    <li><span class="d">August 4, 2026 · Events</span>
+      <p><strong>National Night Out 2026.</strong> Del Ray's block parties turned out again for the
+      neighborhood's biggest porch-to-porch night of the year. Thanks to every host block.</p></li>
+    <li><span class="d">May 2026 · Events</span>
+      <p><strong>House &amp; Garden Tour tickets on sale.</strong> The biennial tour returns — proceeds
+      fund DRCA neighborhood projects. Tickets via Eventbrite.</p></li>
+    <li><span class="d">April 2026 · Land Use</span>
+      <p><strong>Zoning text amendment: what members decided.</strong> Recap of the March membership
+      vote and the letter DRCA sent to the Planning Commission.</p></li>
+    <li><span class="d">2026 · Beautification</span>
+      <p><strong>GardenFest.</strong> Native plant swap and garden day on the Avenue.</p></li>
+  </ul>
+  <p style="font-family:var(--ui);font-size:.85rem;color:var(--muted)">News posts work like today's
+  blog — short updates, categorized, with an archive. 216 existing posts migrate over.</p>
+</section>
+</main>
+
+<footer>
+  <div class="fwrap">
+    <span>Del Ray Citizens Association · Alexandria, VA · Est. 1954</span>
+    <span>landuse@delraycitizen.net · <a href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Membership</a></span>
+  </div>
+</footer>
+
+<script>
+const pages=document.querySelectorAll('section[data-page]');
+const links=document.querySelectorAll('[data-nav]');
+function go(id){
+  pages.forEach(s=>s.classList.toggle('on',s.dataset.page===id));
+  const navId={'event-hgt':'events','minutes':'news'}[id]||id;
+  document.querySelectorAll('nav a[data-nav]').forEach(a=>{
+    if(a.dataset.nav===navId)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+  });
+  window.scrollTo({top:0});
+}
+links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.dataset.nav);}));
+const pb=document.getElementById('pal-brand'),pt=document.getElementById('pal-teal');
+function setPal(teal){
+  if(teal)document.documentElement.dataset.palette='teal';
+  else delete document.documentElement.dataset.palette;
+  pb.classList.toggle('picked',!teal); pt.classList.toggle('picked',teal);
+}
+pb.addEventListener('click',()=>setPal(false));
+pt.addEventListener('click',()=>setPal(true));
+const ft=document.getElementById('ftoggle'),fb=document.getElementById('featured');
+let fOn=true;
+ft.addEventListener('click',()=>{
+  fOn=!fOn; fb.style.display=fOn?'':'none';
+  ft.textContent=fOn?'the band simply disappears — click to preview':'click to bring the featured band back';
+});
+</script>
