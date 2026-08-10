@@ -8,9 +8,10 @@ const all = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() -
 const minutes = all.filter(e => e.data.categories.includes('Meeting Minutes')).slice(0, 2);
 const news = all.filter(e => !e.data.categories.includes('Meeting Minutes')).slice(0, 2);
 const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const featuredLive = featured.enabled && (!featured.until || new Date(featured.until + 'T23:59:59-04:00') >= new Date());
 ---
 <Base title="Del Ray Citizens Association" active="home">
-  {featured.enabled && (
+  {featuredLive && (
     <div class="feature">
       <div class="fimg" aria-hidden="true">
         {featured.image ? <img src={featured.image} alt="" /> : (

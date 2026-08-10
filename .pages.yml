@@ -11,6 +11,10 @@ content:
       - name: enabled
         label: Show the featured band on the homepage?
         type: boolean
+      - name: until
+        label: Featured until (band hides itself after this date)
+        type: date
+        required: false
       - name: eyebrow
         label: Eyebrow line (e.g. "Featured · Tickets on sale")
         type: string

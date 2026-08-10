@@ -1,10 +1,11 @@
 {
   "enabled": true,
-  "eyebrow": "Featured · Tickets on sale",
+  "eyebrow": "Featured \u00b7 Tickets on sale",
   "title": "Biennial House & Garden Tour",
-  "when": "September 2026 · homes & gardens across Del Ray",
+  "when": "September 2026 \u00b7 homes & gardens across Del Ray",
   "blurb": "Step inside Del Ray's most interesting homes and gardens. Proceeds fund DRCA neighborhood projects. Tickets via Eventbrite.",
   "cta_label": "Get tickets",
   "cta_url": "https://delraycitizens.org/house-and-garden-tour/",
-  "image": ""
+  "image": "",
+  "until": "2026-09-30"
 }
