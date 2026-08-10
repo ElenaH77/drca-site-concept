@@ -1,0 +1,7 @@
+---
+title: "Oakville Triangle Route 1 Corridor Planning Meeting Update"
+date: "2014-11-08"
+categories: "Development, Land Use"
+type: "post"
+---
+At the last Oakville Triangle Community Meeting, the city of Alexandria present two additional connectivity options noted as option 1 and 2 shown on the [attached connectivity matrix](https://delraycitizen.files.wordpress.com/2014/11/connectivity-matrix-part-2-for-10-27-2014-meeting-1.pdf) for consideration by the Oakville Triangle Workgroup. For more information please attend the future meeting No. 8 listed below or visit the website link below. Additional Information is available at the [City of Alexandria project website](http://www.alexandriava.gov/planning/info/default.aspx?id=76672#Businesses). There will also be an Oakville Triangle Planning update provided by Ben Flood, the DRCA workgroup representative, at the next DRCA membership meeting held at Reingold - 433 East Monroe Ave on Nov. 12th 7 to 9:30 **The 8th Oakville Triangle/Route 1 Corridor community meeting** will be held on Thursday, November 13, 2014 at Charles Houston Recreation Center, 901 Wythe Street. Open House, 6:00pm - 7:00pm Community Meeting, 7:00pm - 9:00pm **Mount Jefferson Park (Greenway) Plan Public Meeting** , Tuesday, November 18, 2014, 7:00pm - 9:00pm - Mount Vernon Recreation Center, 2701 Commonwealth Avenue To quickly access other posts on the Oakville Triangle development project, click on the Oakville tag below.

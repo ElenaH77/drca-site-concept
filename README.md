@@ -1,12 +1,26 @@
-# DRCA Website Concept Mockup
+# DRCA Website Prototype
 
-Interactive concept for a rebuilt delraycitizens.org, for Del Ray Citizens Association board review.
-Built from the real content of the current site. Navigation works; PDF links are placeholders.
+Working prototype of a rebuilt delraycitizens.org for Del Ray Citizens Association board review.
 
-**View it here: https://elenah77.github.io/drca-site-concept/**
+**Live site: https://elenah77.github.io/drca-site-concept/**
 
-Things to try:
-- The color-scheme switch in the gold ribbon (Brand blues vs Teal accent)
-- The featured-band hide toggle (what the homepage looks like with nothing featured)
-- News → Meeting minutes filter chips
-- Events → House & Garden Tour (the event-page template example)
+Built with [Astro](https://astro.build). All 300+ posts and minutes migrated from the current
+WordPress site. Pushing to `main` auto-deploys via GitHub Actions in about a minute.
+
+## Editing (the point of this prototype)
+
+Content is editable at **https://app.pagescms.org** — sign in with GitHub, open this repo.
+No code, no git, just forms:
+
+- **Homepage: Featured Event** — the banner at the top of the homepage. Six fields. Toggle it off
+  and the homepage gracefully reflows.
+- **News & Minutes** — every post, filterable. Add one, hit save, it's live in a minute.
+- **Event Pages** — the recurring-events directory (House & Garden Tour, GardenFest, ...).
+
+## Structure
+
+- `src/content/news/` — 300+ markdown posts (minutes are posts with category "Meeting Minutes")
+- `src/content/events/` — one file per recurring event
+- `src/data/featured.json` — the homepage featured band
+- `src/data/upcoming.json` — placeholder for the Google Calendar feed integration
+- `.pages.yml` — the Pages CMS editing interface definition

@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+const { title = 'Del Ray Citizens Association', active = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const nav = [
+  ['home', 'Home', base],
+  ['events', 'Events', base + 'events/'],
+  ['news', 'News', base + 'news/'],
+  ['committees', 'Committees', base + 'committees/'],
+  ['about', 'About', base + 'about/'],
+];
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href={base + 'logo-mark.png'} />
+  <title>{title}</title>
+</head>
+<body>
+  <div class="protoribbon">Working prototype for DRCA board review — content is live-editable via Pages CMS. Not the official site (yet).</div>
+  <header class="site">
+    <div class="hwrap">
+      <img class="mark-img" src={base + 'logo-mark.png'} alt="DRCA logo" width="48" height="48" />
+      <a class="mark" href={base}>Del Ray Citizens<br />Association <small>Bringing Neighbors Together · Est. 1954</small></a>
+      <nav class="site" aria-label="Site">
+        {nav.map(([id, label, href]) => (
+          <a href={href} aria-current={active === id ? 'page' : undefined}>{label}</a>
+        ))}
+        <a class="join" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Join / Renew</a>
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="site">
+    <div class="fwrap">
+      <span>Del Ray Citizens Association · Alexandria, VA · Est. 1954</span>
+      <span>landuse@delraycitizen.net · <a href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Membership</a></span>
+    </div>
+  </footer>
+</body>
+</html>

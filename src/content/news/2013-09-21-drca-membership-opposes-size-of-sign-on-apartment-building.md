@@ -1,0 +1,7 @@
+---
+title: "DRCA Membership Opposes Size of Sign on Apartment Building"
+date: "2013-09-21"
+categories: "Land Use, Member Meetings"
+type: "post"
+---
+At the September 9 meeting, the membership voted to support a Land Use Committee recommendation opposing the size of a new sign for the Bell Del Ray apartment building now under construction at 625 E. Monroe Ave., across the street from Simpson Park.[googlemaps https://maps.google.com/maps?q=625+E.+Monroe+Ave,+alexandria,+va&amp;ie=UTF8&amp;hq=&amp;hnear=625+E+Monroe+Ave,+Alexandria,+Virginia+22301&amp;gl=us&amp;t=m&amp;ll=38.82112,-77.050638&amp;spn=0.020061,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&w=300&h=300] City staff and the applicant had agreed on a sign of 50.25 square feet. But the Land Use Committee argued that a sign of 40 square feet, the current limit in the zoning ordinance, is more appropriate in the context of Del Ray’s smaller building scale. The membership agreed.  The Planning Commission has voted to support the larger sign. The request will next be considered by the City Council, and DRCA’s vote will be conveyed to the Council in advance of the vote. The membership also voted in favor of Land Use Committee recommendations to support requests to vacate an alley at 1607-1609 Russell Road and to reduce the parking requirement for the Lacy Court apartments at 4 W. Nelson Ave. and 1502 and 1513 Commonwealth Ave.

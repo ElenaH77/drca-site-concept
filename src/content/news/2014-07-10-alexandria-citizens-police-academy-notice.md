@@ -1,0 +1,7 @@
+---
+title: "Alexandria Citizens’ Police Academy Notice"
+date: "2014-07-10"
+categories: "Pedestrian Safety"
+type: "post"
+---
+By Ginny Hill-Obranovich Volunteer Coordinator, Alexandria Police Department The fall session of the [Citizens’ Police Academy](http://alexandriava.gov/police/info/default.aspx?id=56228) is scheduled to start on Wednesday, September 10th and run thru Wednesday, November 12th with graduation on Wednesday, November 19th. For those of you who are not familiar with the academy, it is a 10 week program for citizens and employees of the city of Alexandria to learn about the different units within the APD through demonstrations, presentations and hands on activities. The sessions are held on Wednesday nights from 6:30 PM - 10:00 PM at Headquarters in the Community Room. The goal of the academy is to build relationships between the Police Department and the participants through the new knowledge they have acquired. The program has been very successful and we would like to expand the participants to include our APD families. If your spouse, significant other or parent would like to attend, please let them know about the academy. Please [complete the application](http://alexandriava.gov/uploadedFiles/police/info/01770011.pdf) and return to the volunteer office. Any questions can be directed to either myself or Dee Seay, who is the Citizens’ Police Department Coordinator. Dee’s email is Deanne.seay@alexandriava.gov Ginny Hill-Obranovich Volunteer Coordinator Alexandria Police Department 3600 Wheeler Ave Alexandria, VA 22304

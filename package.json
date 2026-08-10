@@ -1,0 +1,26 @@
+{
+  "name": "drca-site-concept",
+  "version": "1.0.0",
+  "description": "Interactive concept for a rebuilt delraycitizens.org, for Del Ray Citizens Association board review. Built from the real content of the current site. Navigation works; PDF links are placeholders.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElenaH77/drca-site-concept.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElenaH77/drca-site-concept/issues"
+  },
+  "homepage": "https://github.com/ElenaH77/drca-site-concept#readme",
+  "dependencies": {
+    "astro": "^5.18.2"
+  },
+  "type": "module"
+}

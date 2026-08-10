@@ -1,0 +1,7 @@
+---
+title: "Retail stores proposed to replace Afghan Restaurant"
+date: "2013-09-08"
+categories: "Development, Land Use"
+type: "post"
+---
+A 10,500-square-foot commercial building has been proposed to replace the Afghan Restaurant at 2700-2706 Jefferson Davis Highway.[googlemaps https://maps.google.com/maps?q=2700-2706+Jefferson+Davis+Highway,+alexandria+va&ie=UTF8&hq=&hnear=2706+Jefferson+Davis+Hwy,+Alexandria,+Virginia+22301&gl=us&t=m&ll=38.830682,-77.051497&spn=0.020059,0.025749&z=14&iwloc=A&output=embed&w=300&h=300] The space in the building will be leased to retail stores, according to Duncan Blair, a lawyer representing the applicant, Christos Sarantis of Sterling, VA. The proposal needs only site plan approval. The Planning Commission will consider the proposal at its October meeting. At a meeting I had with city planning staff in July, Planning Director Faroll Hamer characterized the proposed structure as a “building shell,” similar in construction quality to the big-box stores at Potomac Yard. It thus could be considered a “temporary” use and easily demolished if a plan for coordinated redevelopment on the west side of Route 1 is eventually approved. Significant redevelopment of the west side of Route 1 is expected to occur at some point, but staff does not anticipate change for at least the next several years and not until more development occurs across Route 1 at Potomac Yard.

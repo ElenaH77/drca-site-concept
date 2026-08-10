@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const base = import.meta.env.BASE_URL;
+const all = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = all.filter(e => !e.data.categories.includes('Meeting Minutes')).slice(0, 40);
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title="News — DRCA" active="news">
+  <p class="eyebrow">Around the neighborhood</p>
+  <h1>News</h1>
+  <div class="chips">
+    <a class="chip picked" href={base + 'news/'}>All</a>
+    <a class="chip" href={base + 'news/minutes/'}>Meeting minutes</a>
+  </div>
+  <ul class="minlist" style="margin-top:1rem">
+    {posts.map(p => (
+      <li>
+        <span class="d">{fmt(p.data.date)}{p.data.categories ? ' · ' + p.data.categories : ''}</span>
+        <p><a href={base + 'news/' + p.id + '/'}>{p.data.title}</a></p>
+      </li>
+    ))}
+  </ul>
+  <p class="fnote">Showing the 40 most recent of {all.length} migrated posts.</p>
+</Base>

@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import featured from '../data/featured.json';
+import upcoming from '../data/upcoming.json';
+const base = import.meta.env.BASE_URL;
+const all = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const minutes = all.filter(e => e.data.categories.includes('Meeting Minutes')).slice(0, 2);
+const news = all.filter(e => !e.data.categories.includes('Meeting Minutes')).slice(0, 2);
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title="Del Ray Citizens Association" active="home">
+  {featured.enabled && (
+    <div class="feature">
+      <div class="fimg" aria-hidden="true">
+        {featured.image ? <img src={featured.image} alt="" /> : (
+        <svg viewBox="0 0 420 260" preserveAspectRatio="xMidYMid slice" role="img">
+          <rect width="420" height="260" fill="#A5BAC9"/>
+          <circle cx="352" cy="52" r="26" fill="#FFFFFF" opacity=".9"/>
+          <rect x="0" y="190" width="420" height="70" fill="#0A3254"/>
+          <g fill="#FFFFFF">
+            <rect x="28" y="128" width="86" height="66"/><polygon points="22,128 71,92 120,128"/>
+            <rect x="58" y="156" width="24" height="38" fill="#0A3254"/>
+            <rect x="150" y="118" width="96" height="76"/><polygon points="142,118 198,78 254,118"/>
+            <rect x="184" y="150" width="26" height="44" fill="#0A3254"/>
+            <rect x="282" y="132" width="82" height="62"/><polygon points="276,132 323,98 370,132"/>
+            <rect x="310" y="158" width="22" height="36" fill="#0A3254"/>
+          </g>
+          <g>
+            <circle cx="60" cy="212" r="10" fill="#A5BAC9"/><circle cx="130" cy="220" r="7" fill="#FFFFFF"/>
+            <circle cx="230" cy="214" r="9" fill="#A5BAC9"/><circle cx="330" cy="222" r="7" fill="#FFFFFF"/>
+            <circle cx="390" cy="212" r="9" fill="#A5BAC9"/>
+          </g>
+        </svg>
+        )}
+      </div>
+      <div class="ftxt">
+        <p class="eyebrow">{featured.eyebrow}</p>
+        <h1>{featured.title}</h1>
+        <p class="when">{featured.when}</p>
+        <p class="blurb">{featured.blurb}</p>
+        <div class="row">
+          {featured.cta_url && <a class="btn" href={featured.cta_url} target="_blank" rel="noopener">{featured.cta_label}</a>}
+          <a class="btn ghost" href={base + 'events/'}>All events</a>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="introstrip">
+    <p><strong style="font-family:var(--disp);letter-spacing:.04em">NEIGHBORS, INFORMED.</strong> —
+    The Del Ray Citizens Association has connected the people of Del Ray since 1954: land use, safety,
+    schools, parks, and the neighborhood's voice at City Hall.</p>
+    <span><a class="btn" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Become a member</a></span>
+  </div>
+
+  <h2>Coming up</h2>
+  <ul class="events">
+    {upcoming.items.map(ev => (
+      <li class={ev.highlight ? 'hl' : ''}>
+        <div class="date"><b>{ev.day}</b><span>{ev.month}</span></div>
+        <div class="what"><b>{ev.title}</b><p>{ev.detail}</p></div>
+      </li>
+    ))}
+  </ul>
+  <p class="fnote">{upcoming.note}</p>
+
+  <div class="cols" style="margin-top:2rem">
+    <div>
+      <h2 style="margin-top:0">Latest minutes</h2>
+      <ul class="minlist">
+        {minutes.map(m => (
+          <li><span class="d">{fmt(m.data.date)}</span>
+            <p><a href={base + 'news/' + m.id + '/'}>{m.data.title}</a></p></li>
+        ))}
+      </ul>
+      <p><a href={base + 'news/minutes/'} style="font-family:var(--ui);font-size:.85rem">Full minutes archive →</a></p>
+    </div>
+    <div>
+      <h2 style="margin-top:0">News</h2>
+      <ul class="minlist">
+        {news.map(n => (
+          <li><span class="d">{fmt(n.data.date)}</span>
+            <p><a href={base + 'news/' + n.id + '/'}>{n.data.title}</a></p></li>
+        ))}
+      </ul>
+      <p><a href={base + 'news/'} style="font-family:var(--ui);font-size:.85rem">All news →</a></p>
+    </div>
+  </div>
+
+  <div class="joinstrip">
+    <p><strong>Dues do work here.</strong> Membership supports the Halloween parade, Art on the Avenue,
+    the Turkey Trot, neighborhood parks, and local nonprofits.</p>
+    <a class="btn" href="https://drca.wildapricot.org/join-us" target="_blank" rel="noopener">Join / Renew</a>
+  </div>
+</Base>

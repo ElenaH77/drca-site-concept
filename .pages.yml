@@ -1,0 +1,90 @@
+media:
+  input: public/media
+  output: /drca-site-concept/media
+
+content:
+  - name: featured
+    label: "Homepage: Featured Event"
+    type: file
+    path: src/data/featured.json
+    fields:
+      - name: enabled
+        label: Show the featured band on the homepage?
+        type: boolean
+      - name: eyebrow
+        label: Eyebrow line (e.g. "Featured · Tickets on sale")
+        type: string
+      - name: title
+        label: Event title
+        type: string
+      - name: when
+        label: When & where line
+        type: string
+      - name: blurb
+        label: Short description
+        type: text
+      - name: cta_label
+        label: Button label
+        type: string
+      - name: cta_url
+        label: Button link (tickets or registration page)
+        type: string
+      - name: image
+        label: Event photo
+        type: image
+
+  - name: news
+    label: News & Minutes
+    type: collection
+    path: src/content/news
+    filename: "{year}-{month}-{day}-{fields.title}.md"
+    view:
+      fields: [title, date, categories]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: categories
+        label: Category
+        type: select
+        options:
+          values: [Meeting Minutes, Land Use, Events, Happenings, Development, Beautification, Transportation]
+      - name: body
+        label: Post
+        type: rich-text
+
+  - name: events
+    label: Event Pages
+    type: collection
+    path: src/content/events
+    fields:
+      - name: title
+        label: Event name
+        type: string
+      - name: cadence
+        label: When it happens (e.g. "Annual · April · Colasanto Park")
+        type: string
+      - name: blurb
+        label: One-line description
+        type: text
+      - name: order
+        label: Sort order on the Events page
+        type: number
+      - name: cta_label
+        label: Button label (optional)
+        type: string
+        required: false
+      - name: cta_url
+        label: Button link (optional)
+        type: string
+        required: false
+      - name: body
+        label: Event page content
+        type: rich-text

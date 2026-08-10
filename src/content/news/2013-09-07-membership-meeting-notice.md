@@ -1,0 +1,7 @@
+---
+title: "Upcoming Member Meeting Agenda"
+date: "2013-09-07"
+categories: "Member Meetings"
+type: "post"
+---
+The Del Ray Citizens Association membership meeting on [Monday, Sept. 9](http://delraycitizen.wordpress.com/meetings/meeting-calendar/ "Meeting Calendar"), will feature two speakers with extensive knowledge of city issues: Mark Jinks, the deputy city manager, and Jim Spengler, the director of the Department of Recreation, Parks and Cultural Acitivities. Jinks wil speak on the prospects for a Metro station at Potomac Yard. The National Park Service has been strongly resisting the city's preferred location for the station, potentially putting it in jeopardy. Mark will talk about the current situation and what we can expect to happen in the coming months as the City Council nears a decision on whether to build or not. Mark will also discuss the city's budget situation in what is expected to be another challenging year. Jim Spengler will discuss the very difficult challenges the city faces in meeting the recreational needs of its growing population. We will also have a police report, a Land Use Committee report, and a discussion and vote on the DRCA budget for the coming fiscal year. The meeting will once again be held at the [Reingold office building](http://delraycitizen.wordpress.com/meetings/ "Member Meetings"), 433 E. Monroe Ave. There will be refreshments at 7 p.m., followed by the meeting at 7:30.

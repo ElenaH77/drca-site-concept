@@ -1,0 +1,7 @@
+---
+title: "City considers possible changes at Mount Jefferson Greenway"
+date: "2013-11-04"
+categories: "Development, Land Use"
+type: "post"
+---
+City staff will hold a public meeting on Saturday, November 9, at 10 a.m. to discuss possible changes to the Mount Jefferson Greenway/W&OD Trail. [googlemaps https://maps.google.com/maps?ie=UTF8&amp;q=Mount+Jefferson+Park&amp;fb=1&amp;gl=us&amp;hq=Mount+Jefferson+park+map,&amp;hnear=0x89b64d3e93a4abf1:0xd7f52686dbc1012c,Alexandria,+VA&amp;cid=0,0,8557439602731677907&amp;t=m&amp;ll=38.828843,-77.053664&amp;spn=0.005015,0.006437&amp;z=16&amp;iwloc=A&amp;output=embed&w=300&h=300] The meeting will be held at the dog exercise area in the 200 to 300 block of Raymond Avenue. The Departments of Recreation, Parks and Cultural Activities and Transportation and Environmental Services are evaluating two changes. First, new pedestrian access to the greenway would be created at the dead end of Stewart Avenue, an area that is a city-owned right-of-way. This change would also provide a more suitable access for park maintenance vehicles. Second, the existing off-leash dog exercise area would be relocated to a new area further south along the greenway. The current location has severe drainage issues, which affects the usability of the dog run when the area is wet. Those unable to attend the meeting can [judy.lo@alexandriava.gov](mailto:youremailaddress) email written comments to Judy Lo of the Department of Recreation, Parks and Cultural Activities.

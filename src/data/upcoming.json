@@ -1,0 +1,8 @@
+{
+  "note": "Placeholder — in production this list renders from the DRCA Google Calendar feed.",
+  "items": [
+    {"day": "2", "month": "Sep", "title": "Parks Committee Meeting", "detail": "7:30–8:30 pm · Zoom · parks@delraycitizen.net", "highlight": false},
+    {"day": "9", "month": "Sep", "title": "Membership Meeting", "detail": "7:00 pm · Zoom · budget vote for 2026–27 · details in the member newsletter", "highlight": true},
+    {"day": "29", "month": "Sep", "title": "Land Use Committee", "detail": "7:30 pm · Zoom · landuse@delraycitizen.net", "highlight": false}
+  ]
+}
