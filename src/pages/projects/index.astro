@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const base = import.meta.env.BASE_URL;
+const projects = (await getCollection('pages')).filter(p => p.data.section === 'projects')
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Projects & Partnerships — DRCA" active="projects">
+  <p class="eyebrow">Projects &amp; partnerships</p>
+  <h1>What the DRCA is working on</h1>
+  <p class="lede">Active projects and partnerships the association is engaged in — plus how to
+  request DRCA funding for a community project of your own.</p>
+  <div class="grid" style="margin-top:1.25rem">
+    {projects.map(p => (
+      <div class="card">
+        <h3>{p.data.title}</h3>
+        <p><a class="btn ghost" href={base + 'projects/' + p.id + '/'}>Project page →</a></p>
+      </div>
+    ))}
+    <div class="card">
+      <h3>Funding Request</h3>
+      <p>Have a community project that needs DRCA support? Submit a funding request.</p>
+      <p><a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSe96diqS365QC9XiYE9fQxsWSDhUry-2QknSO_GrbjWPwoWLQ/viewform" target="_blank" rel="noopener">Request form →</a></p>
+    </div>
+  </div>
+  <p class="fnote" style="margin-top:1.5rem">Looking for a past project or campaign?
+  <a href={base + 'archive/'}>Browse the archive →</a></p>
+</Base>

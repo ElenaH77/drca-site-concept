@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+const base = import.meta.env.BASE_URL;
+const all = (await getCollection('pages')).filter(p => p.data.section === 'neighborhood')
+  .sort((a, b) => a.data.order - b.data.order);
+const landing = all.find(p => p.id === 'history');
+const rest = all.filter(p => p.id !== 'history');
+const { Content } = await render(landing);
+---
+<Base title="Our Neighborhood — DRCA" active="neighborhood">
+  <p class="eyebrow">Our neighborhood</p>
+  <h1>Del Ray, then and now</h1>
+  <div class="prose"><Content /></div>
+  <h2>Explore</h2>
+  <div class="grid">
+    {rest.map(p => (
+      <div class="card">
+        <h3>{p.data.title}</h3>
+        <p><a class="btn ghost" href={base + 'neighborhood/' + p.id + '/'}>Read →</a></p>
+      </div>
+    ))}
+  </div>
+</Base>

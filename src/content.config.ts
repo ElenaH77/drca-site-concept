@@ -23,4 +23,13 @@ const events = defineCollection({
   }),
 });
 
-export const collections = { news, events };
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+  schema: z.object({
+    title: z.string(),
+    section: z.enum(['neighborhood', 'projects', 'archive']),
+    order: z.number().optional().default(99),
+  }),
+});
+
+export const collections = { news, events, pages };

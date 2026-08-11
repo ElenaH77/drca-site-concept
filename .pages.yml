@@ -92,3 +92,25 @@ content:
       - name: body
         label: Event page content
         type: rich-text
+
+  - name: pages
+    label: Site Pages (Neighborhood / Projects / Archive)
+    type: collection
+    path: src/content/pages
+    view:
+      fields: [title, section]
+    fields:
+      - name: title
+        label: Page title
+        type: string
+      - name: section
+        label: Section
+        type: select
+        options:
+          values: [neighborhood, projects, archive]
+      - name: order
+        label: Sort order within section
+        type: number
+      - name: body
+        label: Page content
+        type: rich-text
