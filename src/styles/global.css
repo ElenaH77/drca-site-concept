@@ -1,16 +1,19 @@
+@font-face{
+  font-family:"Jost";
+  src:url("/drca-site-concept/fonts/jost-latin.woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
+}
 :root{
   /* DRCA brand: PMS 540C #0A3254, PMS 5435C #A5BAC9, Futura */
   --ink:#0A3254; --paper:#F7F9FB; --panel:#FFFFFF; --accent:#A5BAC9; --accent-ink:#44658A;
   --line:#D9E1E9; --muted:#5D6B7A;
   --brand-navy:#0A3254; --brand-steel:#A5BAC9;
-  --disp:"Futura","Avenir Next","Century Gothic","Trebuchet MS",sans-serif;
+  --disp:"Jost","Futura","Avenir Next",sans-serif;
   --body:"Charter","Iowan Old Style",Georgia,serif;
   --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root{
-  --ink:#E4EBF2; --paper:#0D1B2A; --panel:#152638; --accent:#A5BAC9; --accent-ink:#A9C4DC;
-  --line:#28405A; --muted:#8FA3B8;
-}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6}
 a{color:var(--accent-ink)}
