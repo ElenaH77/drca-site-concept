@@ -90,3 +90,19 @@ ul.events .what p{margin:.15rem 0 0;font-size:.86rem;color:var(--muted);font-fam
 footer.site{border-top:2px solid var(--ink);margin-top:2rem}
 .fwrap{max-width:960px;margin:0 auto;padding:1.2rem 1rem;font-family:var(--ui);font-size:.78rem;color:var(--muted);
   display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap}
+
+/* Teal-accent variant (board comparison): brand navy identity + teal working accent */
+:root[data-palette="teal"]{
+  --accent:#2E7D6E; --accent-ink:#245F54; --paper:#FAF7F0; --line:#DFD8C8; --muted:#6B7280;
+  --illus-bg:#2E7D6E; --illus-ground:#245F54; --illus-flower:#DFA32B;
+}
+:root[data-palette="teal"] .btn{background:#2E7D6E;color:#fff}
+:root[data-palette="teal"] .btn.ghost{background:transparent;color:#245F54;border-color:#2E7D6E}
+:root[data-palette="teal"] nav.site a.join,
+:root[data-palette="teal"] .feature .btn,
+:root[data-palette="teal"] .joinstrip .btn{background:#2E7D6E;color:#fff}
+:root[data-palette="teal"] .feature .btn.ghost{background:transparent;color:#F2F6FA;border-color:#9ED0C4}
+:root[data-palette="teal"] .feature .eyebrow{color:#9ED0C4}
+.palpick{margin-left:.6rem;white-space:nowrap}
+.palpick a{cursor:pointer;text-decoration:underline;color:inherit;font-weight:400;padding:0 .15rem}
+.palpick a.picked{font-weight:700;text-decoration:none;outline:1px solid currentColor;border-radius:2px;padding:0 .3rem}

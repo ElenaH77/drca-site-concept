@@ -16,21 +16,21 @@ const featuredLive = featured.enabled && (!featured.until || new Date(featured.u
       <div class="fimg" aria-hidden="true">
         {featured.image ? <img src={featured.image} alt="" /> : (
         <svg viewBox="0 0 420 260" preserveAspectRatio="xMidYMid slice" role="img">
-          <rect width="420" height="260" fill="#A5BAC9"/>
+          <rect width="420" height="260" fill="var(--illus-bg,#A5BAC9)"/>
           <circle cx="352" cy="52" r="26" fill="#FFFFFF" opacity=".9"/>
-          <rect x="0" y="190" width="420" height="70" fill="#0A3254"/>
+          <rect x="0" y="190" width="420" height="70" fill="var(--illus-ground,#0A3254)"/>
           <g fill="#FFFFFF">
             <rect x="28" y="128" width="86" height="66"/><polygon points="22,128 71,92 120,128"/>
-            <rect x="58" y="156" width="24" height="38" fill="#0A3254"/>
+            <rect x="58" y="156" width="24" height="38" fill="var(--illus-ground,#0A3254)"/>
             <rect x="150" y="118" width="96" height="76"/><polygon points="142,118 198,78 254,118"/>
-            <rect x="184" y="150" width="26" height="44" fill="#0A3254"/>
+            <rect x="184" y="150" width="26" height="44" fill="var(--illus-ground,#0A3254)"/>
             <rect x="282" y="132" width="82" height="62"/><polygon points="276,132 323,98 370,132"/>
-            <rect x="310" y="158" width="22" height="36" fill="#0A3254"/>
+            <rect x="310" y="158" width="22" height="36" fill="var(--illus-ground,#0A3254)"/>
           </g>
           <g>
-            <circle cx="60" cy="212" r="10" fill="#A5BAC9"/><circle cx="130" cy="220" r="7" fill="#FFFFFF"/>
-            <circle cx="230" cy="214" r="9" fill="#A5BAC9"/><circle cx="330" cy="222" r="7" fill="#FFFFFF"/>
-            <circle cx="390" cy="212" r="9" fill="#A5BAC9"/>
+            <circle cx="60" cy="212" r="10" fill="var(--illus-bg,#A5BAC9)"/><circle cx="130" cy="220" r="7" fill="#FFFFFF"/>
+            <circle cx="230" cy="214" r="9" fill="var(--illus-bg,#A5BAC9)"/><circle cx="330" cy="222" r="7" fill="#FFFFFF"/>
+            <circle cx="390" cy="212" r="9" fill="var(--illus-bg,#A5BAC9)"/>
           </g>
         </svg>
         )}

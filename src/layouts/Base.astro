@@ -18,9 +18,30 @@ const nav = [
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href={base + 'logo-mark.png'} />
   <title>{title}</title>
+  <script is:inline>
+    if (localStorage.getItem('drca-palette') === 'teal') document.documentElement.dataset.palette = 'teal';
+  </script>
 </head>
 <body>
-  <div class="protoribbon">Working prototype for DRCA board review — content is live-editable via Pages CMS. Not the official site (yet).</div>
+  <div class="protoribbon">Working prototype for DRCA board review — content is live-editable via Pages CMS.
+    <span class="palpick">Color scheme — you choose:
+    <a id="pal-brand">Brand blues</a> · <a id="pal-teal">Teal accent</a></span>
+  </div>
+  <script is:inline>
+    (function () {
+      var pb = document.getElementById('pal-brand'), pt = document.getElementById('pal-teal');
+      function apply() {
+        var teal = localStorage.getItem('drca-palette') === 'teal';
+        if (teal) document.documentElement.dataset.palette = 'teal';
+        else delete document.documentElement.dataset.palette;
+        pb.classList.toggle('picked', !teal);
+        pt.classList.toggle('picked', teal);
+      }
+      pb.addEventListener('click', function () { localStorage.removeItem('drca-palette'); apply(); });
+      pt.addEventListener('click', function () { localStorage.setItem('drca-palette', 'teal'); apply(); });
+      apply();
+    })();
+  </script>
   <header class="site">
     <div class="hwrap">
       <img class="mark-img" src={base + 'logo-mark.png'} alt="DRCA logo" width="48" height="48" />
